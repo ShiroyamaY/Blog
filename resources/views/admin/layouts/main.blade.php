@@ -177,6 +177,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.tags.index')}}" class="nav-link">
+                            <i class="fa-solid fa-list"></i>
+                            <p>
+                                Tags
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

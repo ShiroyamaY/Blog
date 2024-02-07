@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 use Illuminate\Support\Facades\Route;
@@ -32,7 +33,7 @@ Route::prefix('admin')->group(function(){
             'destroy' => 'admin.categories.destroy'
         ]
     );
-    Route::resource('tags', CategoryController::class)->names(
+    Route::resource('tags', TagController::class)->names(
         [
             'index'=> 'admin.tags.index',
             'create'=> 'admin.tags.create',
