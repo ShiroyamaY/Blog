@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
@@ -44,6 +45,18 @@ Route::prefix('admin')->group(function(){
             'destroy' => 'admin.tags.destroy'
         ]
     );
+    Route::resource('posts', PostController::class)->names(
+        [
+            'index'=> 'admin.posts.index',
+            'create'=> 'admin.posts.create',
+            'store'=> 'admin.posts.store',
+            'show'=> 'admin.posts.show',
+            'edit'=> 'admin.posts.edit',
+            'update'=> 'admin.posts.update',
+            'destroy' => 'admin.posts.destroy'
+        ]
+    );
+
 
 });
 Auth::routes();

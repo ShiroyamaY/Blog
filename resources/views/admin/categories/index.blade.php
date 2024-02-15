@@ -25,7 +25,7 @@
                         </td>
                         <td>
                             <a href="{{route('admin.categories.edit',compact('category'))}}">
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i class="fa-solid fa-pen-to-square" style="color: #0cb683;"></i>
                             </a>
                         </td>
                         <td>
