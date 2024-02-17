@@ -2,12 +2,14 @@
 
 namespace App\Services;
 
-use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Collection;
 
 class CategoryService
 {
+    /**
+     * Get all categories
+     */
     public function get(): Collection
     {
         return Category::all();

@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Storage;
 
 class PostService
 {
+    /**
+     * Get all posts
+     */
     public function get(): Collection
     {
         return Post::all();

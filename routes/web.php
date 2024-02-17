@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 use Illuminate\Support\Facades\Route;
@@ -56,7 +57,17 @@ Route::prefix('admin')->group(function(){
             'destroy' => 'admin.posts.destroy'
         ]
     );
-
+    Route::resource('users', UserController::class)->names(
+        [
+            'index'=> 'admin.users.index',
+            'create'=> 'admin.users.create',
+            'store'=> 'admin.users.store',
+            'show'=> 'admin.users.show',
+            'edit'=> 'admin.users.edit',
+            'update'=> 'admin.users.update',
+            'destroy' => 'admin.users.destroy'
+        ]
+    );
 
 });
 Auth::routes();

@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Collection;
 
 class TagService
 {
-
+    /**
+     *  get all tags
+     */
     public function get(): Collection
     {
         return Tag::all();
@@ -25,12 +27,6 @@ class TagService
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
-
-
     public function getOne(string $id)
     {
         return Tag::find($id);

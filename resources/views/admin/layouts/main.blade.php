@@ -195,6 +195,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.users.index')}}" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <p>
+                                Users
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

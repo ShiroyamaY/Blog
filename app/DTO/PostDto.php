@@ -2,7 +2,7 @@
 
 namespace App\DTO;
 
-use App\Http\Requests\Post\PostRequest;
+use App\Http\Requests\Admin\Post\PostRequest;
 
 class PostDto
 {
@@ -19,7 +19,7 @@ class PostDto
     public static function getFromPostRequest(PostRequest $postRequest): PostDto
     {
         $data = $postRequest->validated();
-        return new PostDto(
+        return new self(
             $data['title'],
             $data['content'],
             $data['category'] ?? null,
