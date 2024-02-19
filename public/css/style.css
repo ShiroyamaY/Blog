@@ -10,11 +10,11 @@
 :: 1.0 Base CSS
 :: 2.0 Top Header Area CSS
 :: 3.0 Menu Area CSS
-:: 4.0 Wellcome Area CSS 
-:: 5.0 Top Feature Area CSS 
-:: 6.0 Blog Area CSS 
-:: 7.0 Instagram Area CSS 
-:: 8.0 Footer Social Area CSS 
+:: 4.0 Wellcome Area CSS
+:: 5.0 Top Feature Area CSS
+:: 6.0 Blog Area CSS
+:: 7.0 Instagram Area CSS
+:: 8.0 Footer Social Area CSS
 :: 9.0 Goole Map Area CSS
 :: 10.0 Sidebar Area CSS
 :: 11.0 Breadcumb Area CSS
@@ -29,13 +29,6 @@
 
 /* ***** Import CSS ***** */
 
-@import 'css/bootstrap/bootstrap.min.css';
-@import 'css/others/animate.css';
-@import 'css/others/magnific-popup.css';
-@import 'css/others/meanmenu.min.css';
-@import 'css/others/owl.carousel.min.css';
-@import 'css/others/font-awesome.min.css';
-@import 'css/others/pe-icon-7-stroke.css';
 
 /* --------------------
 :: 1.0 Base CSS
@@ -50,6 +43,7 @@ body {
     font-family: 'Poppins', sans-serif;
     position: relative;
     z-index: auto;
+    background-color: #E9E9E9;
 }
 
 h1,
@@ -68,7 +62,9 @@ p {
     color: #51545f;
     font-size: 16px;
 }
-
+.top_header_area {
+    background-color: #E7E8E3;
+}
 .section_padding_100 {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -478,98 +474,7 @@ li {
 }
 
 /* --------------------
-:: 4.0 Wellcome Area CSS 
--------------------- */
-
-.welcome-single-slide {
-    position: relative;
-    z-index: 1;
-    overflow: hidden
-}
-
-.welcome-single-slide .project_title a > h5 {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 0;
-}
-
-.welcome-single-slide .project_title {
-    position: absolute;
-    content: "";
-    bottom: -300px;
-    left: 0;
-    z-index: 3;
-    background: rgba(252, 108, 63, 0.7);
-    padding: 30px;
-    width: 100%;
-    height: auto;
-    -webkit-transition-duration: 750ms;
-    transition-duration: 750ms;
-}
-
-.welcome-single-slide:hover .project_title {
-    bottom: 0;
-}
-
-.welcome-single-slide .post-date-commnents a {
-    font-size: 14px;
-    font-weight: 400;
-    color: #fff;
-    position: relative;
-    z-index: 1;
-    margin-bottom: 10px;
-}
-
-.welcome-single-slide .post-date-commnents a:hover {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-
-.welcome-single-slide .post-date-commnents a:first-child {
-    margin-right: 30px;
-}
-
-.welcome-single-slide .post-date-commnents a:first-child:after {
-    width: 2px;
-    height: 80%;
-    content: '';
-    position: absolute;
-    top: 10%;
-    right: -14px;
-    z-index: 2;
-    background-color: #fff;
-}
-
-
-.welcome-post-sliders {
-    position: relative;
-    z-index: 1;
-}
-
-.welcome-post-sliders .owl-prev {
-    position: absolute;
-    width: 10%;
-    background-color: transparent;
-    height: 100%;
-    top: 0;
-    left: 0;
-    cursor: url(img/core-img/back.png), auto !important;
-    z-index: 9;
-}
-
-.welcome-post-sliders .owl-next {
-    position: absolute;
-    width: 10%;
-    background-color: transparent;
-    height: 100%;
-    top: 0;
-    right: 0;
-    cursor: url(img/core-img/next.png), auto !important;
-}
-
-/* --------------------
-:: 5.0 Top Feature Area CSS 
+:: 5.0 Top Feature Area CSS
 -------------------- */
 
 .categories_area {
@@ -617,7 +522,7 @@ li {
 }
 
 /* --------------------
-:: 6.0 Blog Area CSS 
+:: 6.0 Blog Area CSS
 -------------------- */
 
 .post-thumb img {
@@ -743,75 +648,10 @@ li {
     margin-bottom: 0;
 }
 
-/* --------------------
-:: 7.0 Instagram Area CSS 
--------------------- */
-
-.instagram_gallery_item {
-    position: relative;
-    z-index: 1;
-}
-
-.instagram_gallery_item img {
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    width: 100%;
-}
-
-.instagram_gallery_item .hover_overlay {
-    background: rgba(252, 108, 63, 0.7);
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    position: absolute;
-    top: 0;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-    width: 100%;
-    z-index: 5;
-}
-
-.instagram_gallery_item:hover .hover_overlay {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-.instagram_gallery_item .follow-me a {
-    font-size: 16px;
-    color: #fff;
-    font-weight: 400;
-}
-
-.instargram_area {
-    position: relative;
-    z-index: 1;
-}
-
-.instargram_area .owl-prev {
-    position: absolute;
-    width: 10%;
-    background-color: transparent;
-    height: 100%;
-    top: 0;
-    left: 0;
-    cursor: url(img/core-img/back.png), auto !important;
-    z-index: 9;
-}
-
-.instargram_area .owl-next {
-    position: absolute;
-    width: 10%;
-    background-color: transparent;
-    height: 100%;
-    top: 0;
-    right: 0;
-    cursor: url(img/core-img/next.png), auto !important;
-}
 
 
 /* --------------------
-:: 8.0 Footer Social Area CSS 
+:: 8.0 Footer Social Area CSS
 -------------------- */
 
 .footer-social-area {
@@ -1112,7 +952,7 @@ li {
 }
 
 .breadcrumb-item + .breadcrumb-item:before {
-    content: "\f105";
+    content: "/";
     font-family: 'FontAwesome'
 }
 
@@ -1190,7 +1030,7 @@ li {
     background-position: center center;
 }
 
-/* -------------------- 
+/* --------------------
 :: 14.0 Single Blog CSS
 -------------------- */
 

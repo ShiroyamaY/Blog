@@ -25,7 +25,8 @@ class UserController extends Controller
     public function index() : View
     {
         $users = $this->userService->get();
-        return view('admin.users.index',compact('users'));
+        $roles = User::getRoles();
+        return view('admin.users.index',compact('users','roles'));
     }
 
     /**
@@ -34,7 +35,8 @@ class UserController extends Controller
     public function create() : View
     {
         $successStore = session('successStore');
-        return view('admin.users.create',compact('successStore'));
+        $roles = User::getRoles();
+        return view('admin.users.create',compact('successStore','roles'));
     }
 
     /**
@@ -55,7 +57,8 @@ class UserController extends Controller
      */
     public function show(User $user): View
     {
-        return view('admin.users.show', compact('user'));
+        $roles = User::getRoles();
+        return view('admin.users.show', compact('user','roles'));
     }
 
     /**
@@ -63,8 +66,9 @@ class UserController extends Controller
      */
     public function edit(User $user) : View
     {
+        $roles = User::getRoles();
         $successUpdate = Session::get('successUpdate');
-        return view('admin.users.edit',compact('user','successUpdate'));
+        return view('admin.users.edit',compact('user','successUpdate','roles'));
     }
 
     /**

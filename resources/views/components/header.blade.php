@@ -1,34 +1,64 @@
-<header class="header_area">
-    <div class="container">
-        <div class="row">
-            <!-- Logo Area Start -->
-            <div class="col-12">
-                <div class="logo_area text-center">
-                    <a href="index.html" class="yummy-logo">Yummy Blog</a>
+ <div class="top_header_area mb-3">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <div class="collapse navbar-collapse justify-content-between"  id="yummyfood-nav">
+                    <ul class="navbar-nav" id="yummy-nav">
+                        <li>
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                {{ config('app.name', 'Food Blog') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('main.index')}}">Blog<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categories</a>
+                        </li>
+                    </ul>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ Auth::user()->name }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">
+                                            logout
+                                        </button>
+{{--                                            {{ __('Logout') }}--}}
+                                        </button>
+                                    <!-- shit code here todo: remove this shit-->
+                                    <script>
+                                        // const dropdownBtn = document.querySelector('#navbarDropdown')
+                                        // console.log(dropdownBtn)
+                                        // dropdownBtn.addEventListener('click', (event) => {
+                                        //     event.preventDefault();
+                                        // })
+                                    </script>
+
+
+                                </div>
+                            </li>
+                            </form>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <nav class="navbar navbar-expand-lg">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#yummyfood-nav" aria-controls="yummyfood-nav" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
-                    <!-- Menu Area Start -->
-                    <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
-                        <ul class="navbar-nav" id="yummy-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('main.index')}}">Blog<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Categories</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        </nav>
     </div>
-</header>

@@ -9,7 +9,7 @@
             <table class="table table-bordered table-sm">
                 <tr>
                     <th>Id</th>
-                    <th class="fon">Title</th>
+                    <th>Title</th>
                     <th>Show</th>
                     <th>Edit</th>
                     <th>Delete</th>

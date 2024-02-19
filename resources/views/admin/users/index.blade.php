@@ -11,6 +11,7 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Role</th>
                     <th>Show</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -20,6 +21,7 @@
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
+                        <td>{{$roles[$user->role ?? 1]}}</td>
                         <td>
                             <a href="{{route('admin.users.show',['user'=>$user->id])}}">
                                 <i class="far fa-eye"></i>

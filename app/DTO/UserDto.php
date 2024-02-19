@@ -10,6 +10,7 @@ class UserDto
         public readonly string $name,
         public readonly string $email,
         public readonly ?string $password,
+        public readonly int $role,
     ){
 
     }
@@ -20,6 +21,7 @@ class UserDto
             $data['name'],
             $data['email'],
             $data['password'] ?? null,
+            $data['role']
         );
     }
 }

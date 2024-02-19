@@ -27,6 +27,7 @@ class UserService
                 'name' => $userDto->name,
                 'email' => $userDto->email,
                 'password' => $userDto->password,
+                'role' => $userDto->role
             ]);
             DB::commit();
         }catch (\Exception $exception){
@@ -50,6 +51,7 @@ class UserService
             DB::beginTransaction();
             $user->name = $userDto->name;
             $user->email = $userDto->email;
+            $user->role = $userDto->role;
             $user->save();
             DB::commit();
         }catch (\Exception $exception){

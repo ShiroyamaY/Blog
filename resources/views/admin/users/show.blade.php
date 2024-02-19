@@ -12,6 +12,7 @@
                         <td>Id</td>
                         <td>Name</td>
                         <td>Email</td>
+                        <td>Roles</td>
                     </tr>
                     <tr>
                         <td>
@@ -22,6 +23,9 @@
                         </td>
                         <td>
                             {{$user->email}}
+                        </td>
+                        <td>
+                            {{$roles[$user->role]}}
                         </td>
                     </tr>
                 </table>

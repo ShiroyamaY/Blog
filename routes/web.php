@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +21,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[MainController::class,'index'])->name('main.index');
 
-Route::prefix('admin')->group(function(){
-
+Route::prefix('admin')
+    ->middleware(['auth','admin'])
+    ->group(function() {
     Route::get('/',[AdminMainController::class,'index']);
 
     Route::resource('categories', CategoryController::class)->names(
@@ -70,5 +72,11 @@ Route::prefix('admin')->group(function(){
     );
 
 });
+
+
 Auth::routes();
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
