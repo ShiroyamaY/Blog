@@ -34,30 +34,6 @@
             @enderror
         </div>
         <div class="form-group">
-            <div class="mb-3">
-                <label for="password" class="w-100">
-                    <span class="font-weight-bold">Password:</span><input class="form-control" type="password" name="password" id="password" >
-                </label>
-            </div>
-            @error('password')
-            <div class="mb-2 alert alert-danger">
-                {{$message}}
-            </div>
-            @enderror
-        </div>
-        <div class="form-group">
-            <div class="mb-3">
-                <label for="password_confirmation" class="w-100">
-                    <span class="font-weight-bold">Confirm password:</span><input class="form-control" type="password" name="password_confirmation" id="password_confirmation">
-                </label>
-            </div>
-            @error('password_confirmation')
-            <div class="mb-2 alert alert-danger">
-                {{$message}}
-            </div>
-            @enderror
-        </div>
-        <div class="form-group">
                 <label for="role" class="d-flex flex-column w-100">
                     <span class="mb-3">Role:</span>
                     <select class="custom-select" name="role" id="role">
