@@ -5,6 +5,7 @@ namespace App\Services;
 use App\DTO\UserDto;
 use App\Mail\User\PasswordMail;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -28,13 +29,14 @@ class UserService
         try {
             DB::beginTransaction();
             $password = Hash::make(Str::password(10));
-            User::firstOrCreate([
+            $user = User::firstOrCreate([
                 'name' => $userDto->name,
                 'email' => $userDto->email,
                 'password' => $password,
                 'role' => $userDto->role
             ]);
             Mail::to($userDto->email)->send(new PasswordMail($password));
+            event(new Registered($user));
             DB::commit();
         }catch (\Exception $exception){
             DB::rollBack();
