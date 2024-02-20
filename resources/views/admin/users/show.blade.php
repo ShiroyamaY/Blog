@@ -2,6 +2,8 @@
 @section('content')
     <x-admin.content-header iconClasses="far fa-eye">
         <x-slot:title>Show user</x-slot:title>
+        <li class="breadcrumb-item"><a href="{{route('admin.users.index')}}">Users</a></li>
+        <li class="breadcrumb-item">{{$user->name}}</li>
     </x-admin.content-header>
     <!-- Main content -->
     <section class="content">

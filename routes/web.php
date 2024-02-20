@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[MainController::class,'index'])->name('main.index');
 
 Route::prefix('admin')
-    ->middleware(['auth','admin'])
+    ->middleware(['auth','verified','admin'])
     ->group(function() {
-    Route::get('/',[AdminMainController::class,'index']);
+    Route::get('/',[AdminMainController::class,'index'])->name('admin.main.index');
 
     Route::resource('categories', CategoryController::class)->names(
         [
@@ -73,11 +73,4 @@ Route::prefix('admin')
 
 });
 
-
 Auth::routes(['verify' => true]);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

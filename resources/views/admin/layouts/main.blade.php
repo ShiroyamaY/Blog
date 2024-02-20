@@ -57,6 +57,14 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
+                        <a href="{{route('admin.main.index')}}" class="nav-link">
+                            <i class="fa-solid fa-house"></i>
+                            <p>
+                                Main
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{route('admin.categories.index')}}" class="nav-link">
                             <i class="fa-solid fa-list"></i>
                             <p>

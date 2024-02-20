@@ -1,6 +1,12 @@
 @extends('admin.layouts.main')
 @section('content')
-@include('admin.includes.content-header')
+    <x-admin.content-header iconClasses="fa-solid fa-list">
+        <x-slot:title>
+            Create post
+        </x-slot:title>
+        <li class="breadcrumb-item"><a href="{{route('admin.posts.index')}}">Posts</a></li>
+        <li class="breadcrumb-item">Create post</li>
+    </x-admin.content-header>
 <div class="container d-flex flex-column align-items-center">
     @if($successStore)
         <div class="alert alert-success">

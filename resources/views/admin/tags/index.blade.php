@@ -1,7 +1,12 @@
 @extends('admin.layouts.main')
 @section('content')
 
-    @include('admin.includes.content-header')
+    <x-admin.content-header iconClasses="fa-solid fa-tags">
+        <x-slot:title>
+            Tags
+        </x-slot:title>
+        <li class="breadcrumb-item">Tags</li>
+    </x-admin.content-header>
 
     <!-- Main content -->
     <section class="content">

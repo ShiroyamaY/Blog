@@ -2,6 +2,8 @@
 @section('content')
     <x-admin.content-header iconClasses="far fa-eye">
         <x-slot:title>Show category</x-slot:title>
+        <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categories</a></li>
+        <li class="breadcrumb-item">{{$category->title}}</li>
     </x-admin.content-header>
     <!-- Main content -->
     <section class="content">

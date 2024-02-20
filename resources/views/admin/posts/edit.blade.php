@@ -9,6 +9,8 @@
     <x-admin.content-header iconClasses="text-success fa-solid fa-pen-to-square">
         <x-slot:title>Edit post
         </x-slot:title>
+        <li class="breadcrumb-item"><a href="{{route('admin.posts.index')}}">Posts</a></li>
+        <li class="breadcrumb-item">Edit post</li>
     </x-admin.content-header>
     <div class="container d-flex flex-column align-items-center">
         @if($successUpdate)

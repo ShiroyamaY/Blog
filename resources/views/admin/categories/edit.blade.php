@@ -1,8 +1,10 @@
 @extends('admin.layouts.main')
 @section('content')
-    <x-admin.content-header iconClasses="text-success fsuccessa-solid fa-pen-to-square">
+    <x-admin.content-header iconClasses="text-success fa-solid fa-pen-to-square">
         <x-slot:title>Edit category
         </x-slot:title>
+        <li class="breadcrumb-item"><a href="{{route('admin.categories.index')}}">Categories</a></li>
+        <li class="breadcrumb-item">Edit category</li>
     </x-admin.content-header>
     <div class="container d-flex flex-column align-items-center">
         @if($successUpdate)

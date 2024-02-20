@@ -1,8 +1,13 @@
 @extends('admin.layouts.main')
 @section('content')
 
-    @include('admin.includes.content-header')
 
+    <x-admin.content-header iconClasses="fa-solid fa-user">
+        <x-slot:title>
+            Users
+        </x-slot:title>
+        <li class="breadcrumb-item">Users</li>
+    </x-admin.content-header>
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid  d-flex flex-column align-items-center">
