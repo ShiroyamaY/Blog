@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard</title>
+    <title>Personal area</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -57,7 +57,7 @@
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
-                        <a href="{{route('admin.main.index')}}" class="nav-link">
+                        <a href="{{route('personal.main.index')}}" class="nav-link">
                             <i class="fa-solid fa-house"></i>
                             <p>
                                 Main
@@ -65,37 +65,22 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.categories.index')}}" class="nav-link">
-                            <i class="fa-solid fa-list"></i>
+                        <a href="{{route('personal.liked.index')}}" class="nav-link">
+                            <i class="fa-solid fa-heart"></i>
                             <p>
-                                Categories
+                                Liked
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.tags.index')}}" class="nav-link">
-                            <i class="fa-solid fa-tags"></i>
+                        <a href="{{route('personal.comments.index')}}" class="nav-link">
+                            <i class="fa-solid fa-comment"></i>
                             <p>
-                                Tags
+                                Comments
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('admin.posts.index')}}" class="nav-link">
-                            <i class="fa-regular fa-clipboard"></i>
-                            <p>
-                                Posts
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('admin.users.index')}}" class="nav-link">
-                            <i class="fa-solid fa-user"></i>
-                            <p>
-                                Users
-                            </p>
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
         </div>
@@ -108,10 +93,6 @@
         @yield('content')
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; <a href=""></a>.</strong>
-        All rights reserved.
-    </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -123,7 +104,10 @@
     <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<footer class="main-footer">
+    <strong>Copyright &copy; <a href=""></a>.</strong>
+    All rights reserved.
+</footer>
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->

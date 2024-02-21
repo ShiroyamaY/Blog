@@ -7,6 +7,7 @@ use App\Notifications\SendVerifyWithQueueNotification;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -50,6 +51,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    public function likedPosts(): BelongsToMany
+    {
+        return $this->belongsToMany(Post::class,'post_user_likes','user_id','post_id');
+    }
     public static function getRoles(): array
     {
         return [
@@ -60,5 +65,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function SendEmailVerificationNotification(): void
     {
         $this->notify(new SendVerifyWithQueueNotification());
+    }
+    public function comments(){
+        return $this->hasMany(Comment::class);
     }
 }

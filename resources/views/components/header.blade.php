@@ -31,31 +31,20 @@
                                 </li>
                             @endif
                         @else
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    {{ Auth::user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item">
-                                            logout
-                                        </button>
-{{--                                            {{ __('Logout') }}--}}
-                                        </button>
-                                    <!-- shit code here todo: remove this shit-->
-                                    <script>
-                                        // const dropdownBtn = document.querySelector('#navbarDropdown')
-                                        // console.log(dropdownBtn)
-                                        // dropdownBtn.addEventListener('click', (event) => {
-                                        //     event.preventDefault();
-                                        // })
-                                    </script>
-
-
-                                </div>
-                            </li>
-                            </form>
+                                <li class="nav-item dropdown">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ Auth::user()->name }}
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{route('personal.main.index')}}">Profile</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item">
+                                                    logout
+                                                </button>
+                                            </form>
+                                        </div>
+                                </li>
                         @endguest
                     </ul>
                 </div>

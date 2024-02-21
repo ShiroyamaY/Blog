@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\Admin\MainController as AdminMainController;
+use App\Http\Controllers\Personal\CommentController;
+use App\Http\Controllers\Personal\LikedController;
+use App\Http\Controllers\Personal\MainController as PersonalMainController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +74,28 @@ Route::prefix('admin')
         ]
     );
 
+});
+
+Route::prefix('personal')
+    ->middleware(['auth','verified'])
+    ->group(function(){
+    Route::get('/',[PersonalMainController::class,'index'])->name('personal.main.index');
+    Route::resource('comments', CommentController::class)
+        ->except(['create','show','store'])
+        ->names([
+            'index' => 'personal.comments.index',
+            'show' => 'personal.comments.show',
+            'edit' => 'personal.comments.edit',
+            'update' => 'personal.comments.update',
+            'destroy' => 'personal.comments.destroy'
+        ]);
+    Route::resource('liked', LikedController::class)
+        ->only(['index','show','destroy'])
+        ->names([
+            'index' => 'personal.liked.index',
+            'show'=>'personal.like.show',
+            'destroy' => 'personal.liked.destroy'
+        ]);
 });
 
 Auth::routes(['verify' => true]);
