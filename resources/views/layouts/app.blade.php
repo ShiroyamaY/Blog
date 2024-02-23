@@ -23,7 +23,8 @@
 {{--    @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
     <!-- Favicon -->
     <link rel="icon" href="{{asset('img/core-img/favicon.ico')}}">
-
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -70,4 +71,5 @@
 <script src="{{asset('js/others/plugins.js')}}"></script>
 <!-- Active JS -->
 <script src="{{asset('js/active.js')}}"></script>
+<script src="https://kit.fontawesome.com/9647ab03f6.js" crossorigin="anonymous"></script>
 </body>

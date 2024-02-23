@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 
 class MainController extends Controller
 {
-
+    
     public function index(): View
     {
         $usersCount = User::all()->count();
@@ -25,5 +25,6 @@ class MainController extends Controller
                 'tagsCount'
             )
         );
+
     }
 }

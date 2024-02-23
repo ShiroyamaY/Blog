@@ -1327,3 +1327,17 @@ li {
 	color: #fff;
 	cursor: pointer;
 }
+.single-post{
+    flex: 0 1 30%;
+}
+.post-thumb{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-thumb img{
+    width: 100%;
+    aspect-ratio: 1.5;
+    object-fit: cover;
+}
