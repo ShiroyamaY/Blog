@@ -12,7 +12,7 @@
                             <a class="nav-link" href="{{route('main.index')}}">Blog<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Categories</a>
+                            <a class="nav-link" href="{{route('categories.index')}}">Categories</a>
                         </li>
                     </ul>
                     <!-- Right Side Of Navbar -->

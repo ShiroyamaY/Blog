@@ -3,7 +3,7 @@
     <!-- ****** Header Area End ****** -->
 
     <!-- ****** Breadcumb Area Start ****** -->
-    <div class="breadcumb-area" style="background-image: url({{asset('img/bg-img/breadcumb.jpg')}});">
+    <div class="breadcumb-area" style="background-image: url({{asset('img/bg-img/bg.png')}});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -45,7 +45,7 @@
                             </div>
                             <!-- Post Content -->
                             <div class="post-content ">
-                                <div class="post-meta d-flex">
+                                <div class="post-meta d-flex flex-column align-items-start">
                                     <div class="post-author-date-area d-flex">
                                         <!-- Post Date -->
                                         <div class="post-date">
@@ -53,7 +53,7 @@
                                         </div>
                                     </div>
                                     <!-- Post Comment & Share Area -->
-                                    <div class="post-comment-share-area w-25 d-flex justify-content-around">
+                                    <div class="post-comment-share-area d-flex">
                                         <!-- Post Favourite -->
                                         <div class="post-favourite d-flex justify-content-between">
                                             <form class="w-25 d-flex justify-content-between" action="{{route('posts.likes.store',compact('post'))}}" method="POST">
@@ -77,7 +77,7 @@
                                             </div>
                                         </div>
                                         <!-- Post Comments -->
-                                        <div class="post-comments">
+                                        <div class="post-comments ml-3">
                                             <i class="fa fa-comment-o" aria-hidden="true"></i>
                                             {{$post->comments->count()}}
                                         </div>

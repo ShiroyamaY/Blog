@@ -45,7 +45,17 @@ body {
     z-index: auto;
     background-color: #E9E9E9;
 }
-
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.content {
+    flex: 1 0 auto;
+}
+.footer {
+    flex: 0 0 auto;
+}
 h1,
 h2,
 h3,
@@ -1269,7 +1279,7 @@ li {
 .bg-pattern {
     background-attachment: fixed;
     background-position: center center;
-    background-image: url(img/bg-img/bg-pattern.jpg);
+    background-image: url(img/bg-img/bg.png);
     position: relative;
     background-size: cover;
     z-index: 1;
