@@ -1341,3 +1341,112 @@ li {
     aspect-ratio: 1.5;
     object-fit: cover;
 }
+.edica-page-title {
+    padding-bottom: 33px; }
+.edica-blog-post-meta {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    color: #7d848b;
+    margin-bottom: 67px; }
+.blog-post-featured-img {
+    margin-bottom: 44px; }
+.post-content p {
+    font-size: 18px;
+    line-height: 1.56;
+    color: #3a3a3a;
+    margin-bottom: 50px; }
+.post-content a {
+    color: #f29431;
+    text-decoration: underline; }
+.post-content h2 {
+    font-size: 30px; }
+.post-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 67px; }
+.post-content ul li {
+    font-size: 16px;
+    line-height: 1.63;
+    color: #3a3a3a;
+    margin-bottom: 11px;
+    position: relative;
+    padding-left: 23px; }
+.post-content ul li::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000000;
+    position: absolute;
+    top: 8px;
+    left: 0; }
+
+.post-content blockquote {
+    margin-bottom: 70px;
+    padding-left: 94px;
+    background-image: url("../images/quote.svg");
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 60px; }
+
+.post-content blockquote p {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #0c0b0b;
+    margin-bottom: 24px; }
+.post-content blockquote .blockquote-footer {
+    font-size: 20px;
+    font-weight: 700;
+    color: #bbc5d2; }
+.related-posts {
+    padding-top: 45px;
+    border-top: 1px solid #fff0e8;
+    margin-bottom: 52px; }
+.related-posts .section-title {
+    font-size: 30px;
+    line-height: 1.97; }
+.related-posts .post-thumbnail {
+    width: 100%;
+    margin-bottom: 21px; }
+.related-posts .post-category {
+    font-size: 16px;
+    line-height: 1.13;
+    color: #7d848b;
+    margin-bottom: 8px; }
+.related-posts .post-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #020202; }
+.comment-section {
+    margin-bottom: 100px; }
+.comment-section .form-group {
+    margin-bottom: 33px; }
+.comment-section .form-control {
+    min-height: 60px;
+    padding: 21px 19px; }
+.comment-section .btn {
+    padding: 19px 45px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700; }
+.comment{
+    margin-bottom: 12px;
+}
+.comment-author{
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+.comment-body{
+    max-width: 648px;
+    overflow: hidden;
+}
+.comment-links{
+    margin-bottom: 18px;
+}
+.comment-date{
+    font-size: 15px;
+}

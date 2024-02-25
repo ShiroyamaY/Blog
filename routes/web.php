@@ -2,13 +2,15 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MainController;
-use App\Http\Controllers\Personal\CommentController;
+use App\Http\Controllers\Personal\CommentController as PersonalCommentController;
 use App\Http\Controllers\Personal\LikedController;
 use App\Http\Controllers\Personal\MainController as PersonalMainController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +26,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[MainController::class,'index'])->name('main.index');
 
+Route::resource('posts', PostController::class)->only(['index','show']);
+Route::resource('posts.comments',CommentController::class)->except('index');
 Route::prefix('admin')
     ->middleware(['auth','verified','admin'])
     ->group(function() {
@@ -51,7 +55,7 @@ Route::prefix('admin')
             'destroy' => 'admin.tags.destroy'
         ]
     );
-    Route::resource('posts', PostController::class)->names(
+    Route::resource('posts', AdminPostController::class)->names(
         [
             'index'=> 'admin.posts.index',
             'create'=> 'admin.posts.create',
@@ -80,7 +84,7 @@ Route::prefix('personal')
     ->middleware(['auth','verified'])
     ->group(function(){
     Route::get('/',[PersonalMainController::class,'index'])->name('personal.main.index');
-    Route::resource('comments', CommentController::class)
+    Route::resource('comments', PersonalCommentController::class)
         ->except(['create','show','store'])
         ->names([
             'index' => 'personal.comments.index',
