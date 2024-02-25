@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Personal\CommentController as PersonalCommentController;
 use App\Http\Controllers\Personal\LikedController;
@@ -28,6 +29,9 @@ Route::get('/',[MainController::class,'index'])->name('main.index');
 
 Route::resource('posts', PostController::class)->only(['index','show']);
 Route::resource('posts.comments',CommentController::class)->except('index');
+Route::resource('posts.likes',LikeController::class)
+    ->middleware(['auth','verified'])
+    ->only('store');
 Route::prefix('admin')
     ->middleware(['auth','verified','admin'])
     ->group(function() {

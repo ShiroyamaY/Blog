@@ -55,9 +55,26 @@
                                     <!-- Post Comment & Share Area -->
                                     <div class="post-comment-share-area w-25 d-flex justify-content-around">
                                         <!-- Post Favourite -->
-                                        <div class="post-favourite">
-                                            <i class="fa-regular fa-heart"></i>
-                                            {{$post->likedUsers->count()}}
+                                        <div class="post-favourite d-flex justify-content-between">
+                                            <form class="w-25 d-flex justify-content-between" action="{{route('posts.likes.store',compact('post'))}}" method="POST">
+                                                @csrf
+                                                <button class="border-0 like-button" type="submit">
+                                                    @auth
+                                                        @if(auth()->user()->likedPosts->contains($post->id))
+                                                            <i class="fa-solid fa-heart"></i>
+                                                        @else
+                                                            <i class="fa-regular fa-heart"></i>
+                                                        @endif
+                                                    @endauth
+                                                    @guest
+                                                        <i class="fa-regular fa-heart"></i>
+                                                    @endguest
+                                                </button>
+
+                                            </form>
+                                            <div class="w-25">
+                                                {{$post->likedUsers->count()}}
+                                            </div>
                                         </div>
                                         <!-- Post Comments -->
                                         <div class="post-comments">

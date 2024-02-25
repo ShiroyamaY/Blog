@@ -1450,3 +1450,10 @@ li {
 .comment-date{
     font-size: 15px;
 }
+.like-button{
+    background: #E9E9E9;
+}
+.post-show-favourite{
+    max-width: 920px;
+    margin-bottom: 15px;
+}

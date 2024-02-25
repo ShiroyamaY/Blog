@@ -18,7 +18,7 @@ class CommentController extends Controller
             'post_id' => $postId,
             'content' => $request->validated('content'),
         ]);
-        return redirect()->route('posts.show',['post' => $postId]);
+        return redirect()->back();
     }
 
 

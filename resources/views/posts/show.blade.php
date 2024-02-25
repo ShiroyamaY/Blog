@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container d-flex flex-column justify-content-center">
         <div class="d-flex justify-content-center">
             <h1 class="pt-5 pb-5">{{$post->title}}</h1>
         </div>
         <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200"> {{$date->format("F j")}}, {{$date->year}} • {{$date->format("H:i")}} • Featured • {{$post->comments->count()}} Comments</p>
         <section class="single-post  d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
-            <div class="row mb-5 d-flex justify-content-center">
-                <div class="col-md-4 mb-3 post-thumb" data-aos="fade-right">
+            <div class="row  d-flex justify-content-center">
+                <div class="col-md-4 post-thumb" data-aos="fade-right">
                     <img src="{{url('storage/' . $post->preview_image)}}" alt="blog post" class="img-fluid">
                 </div>
-                <div class="col-md-4 mb-3 post-thumb" data-aos="fade-up">
+                <div class="col-md-4 post-thumb" data-aos="fade-up">
                     <img src="{{url('storage/' . $post->main_image)}}" alt="blog post" class="img-fluid">
                 </div>
             </div>
@@ -22,6 +22,23 @@
                 </div>
             </div>
         </section>
+        <div class="post-show-favourite d-flex justify-content-end">
+            <form class="like-form" action="{{route('posts.likes.store',compact('post'))}}" method="POST">
+                @csrf
+                <button class="border-0 like-button" type="submit">
+                    @auth
+                        @if(auth()->user()->likedPosts->contains($post->id))
+                            <i class="fa-3x fa-solid fa-heart"></i>
+                        @else
+                            <i class="fa-3x fa-regular fa-heart"></i>
+                        @endif
+                    @endauth
+                    @guest
+                        <i class="fa-3x fa-regular fa-heart"></i>
+                    @endguest
+                </button>
+            </form>
+        </div>
         <div class="row">
             <div class="col-lg-9 mx-auto">
                 @if($relatedPosts->count() > 0)
@@ -62,7 +79,7 @@
                         {{$comments->links()}}
                     </div>
                     @auth
-                        <h2 class="section-title mb-5" data-aos="fade-up">Leave a Reply</h2>
+                        <h2 class="section-title mb-5" data-aos="fade-up">Leave a comment</h2>
                         <form action="{{route('posts.comments.store',$post->id)}}" method="POST">
                             @csrf
                             <div class="row">
@@ -73,7 +90,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12" data-aos="fade-up">
-                                    <input type="submit" value="Send Message" class="btn btn-warning">
+                                    <input type="submit" value="Send Comment" class="btn btn-warning">
                                 </div>
                             </div>
                         </form>
