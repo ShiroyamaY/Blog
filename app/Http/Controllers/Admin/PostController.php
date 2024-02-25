@@ -9,7 +9,7 @@ use App\Http\Requests\Admin\Post\PostUpdateRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Services\PostService;
+use App\Services\Admin\PostService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;

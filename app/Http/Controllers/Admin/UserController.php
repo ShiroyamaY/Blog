@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\DTO\UserDto;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\User\UserRequest;
 use App\Http\Requests\Admin\User\UserStoreRequest;
 use App\Http\Requests\Admin\User\UserUpdateRequest;
 use App\Models\User;
-use App\Services\UserService;
+use App\Services\Admin\UserService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Session;
