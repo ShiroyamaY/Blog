@@ -26,13 +26,22 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $date = Carbon::parse($post->created_at);
-        $comments = $post->comments()->with('user')->paginate(6);
+
+        $comments = $post->comments()
+            ->with('user')
+            ->paginate( 6, ['*'], 'comments')
+            ->withQueryString();
+
         $relatedPosts = Post::with('category')
             ->where('category_id',$post->category_id)
             ->where('id','!=',$post->id)
-            ->paginate(3);
+            ->paginate(3, ['*'], 'relatedPosts')
+            ->withQueryString();
 
-        return view('posts.show',compact('post','date','relatedPosts','comments'));
+        return view(
+            'posts.show',
+            compact('post','date','relatedPosts','comments')
+        );
     }
 
 

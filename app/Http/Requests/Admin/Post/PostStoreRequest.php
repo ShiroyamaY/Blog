@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin\Post;
 
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Validation\Rule;
 
 class PostStoreRequest extends PostRequest
 {
@@ -23,7 +24,7 @@ class PostStoreRequest extends PostRequest
     {
         $rules = parent::rules();
         $rules += [
-            'title' => ['required','string'],
+            'title' => ['required','string',Rule::unique('posts')],
             'preview_image' => ['required','file','image'],
             'main_image' => ['required','file','image']
         ];

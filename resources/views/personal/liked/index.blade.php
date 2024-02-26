@@ -31,6 +31,7 @@
                     </tr>
                 @endforeach
             </table>
+            {{$likedPosts->links()}}
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

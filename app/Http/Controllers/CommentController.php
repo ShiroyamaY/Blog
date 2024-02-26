@@ -21,24 +21,6 @@ class CommentController extends Controller
         return redirect()->back();
     }
 
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(int $postId,Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(int $postId,Request $request, Comment $comment)
-    {
-        //
-    }
-
     /**
      * Remove the specified resource from storage.
      */

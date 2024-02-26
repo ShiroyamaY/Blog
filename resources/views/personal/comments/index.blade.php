@@ -11,15 +11,22 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid  d-flex flex-column align-items-center">
-            <table class="table w-75">
+            <table class="table w-100">
                 <tr>
                     <th>Post name</th>
+                    <th>Content</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
-                @foreach($comments as $comment)
+            @foreach($comments as $comment)
                     <tr>
-                        <td>{{$comment->post->title}}</td>
+                        <td>
+                            {{$comment->post->title}}
+                            @if($comment->post->trashed())
+                                <div class="mt-1 alert alert-danger">[Пост был удален]</div>
+                            @endif
+                        </td>
+                        <td>{{$comment->content}}</td>
                         <td>
                             <a href="{{route('personal.comments.edit',compact('comment'))}}">
                                 <i class="fa-solid fa-pen-to-square" style="color: #0cb683;"></i>
@@ -37,6 +44,7 @@
                     </tr>
                 @endforeach
             </table>
+            {{$comments->links()}}
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

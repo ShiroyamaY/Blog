@@ -14,7 +14,7 @@ class LikedController extends Controller
      */
     public function index()
     {
-        $likedPosts = auth()->user()->likedPosts;
+        $likedPosts = auth()->user()->likedPosts()->paginate(6);
 
         return view('personal.liked.index',compact('likedPosts'));
     }

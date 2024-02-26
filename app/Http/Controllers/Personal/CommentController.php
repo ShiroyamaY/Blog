@@ -16,7 +16,10 @@ class CommentController extends Controller
      */
     public function index() : View
     {
-        $comments = auth()->user()->comments;
+        $comments = auth()->user()
+            ->comments()
+            ->with(['post' => fn($q) => $q->withTrashed()])
+            ->paginate(6);
         return view('personal.comments.index',compact('comments'));
     }
 

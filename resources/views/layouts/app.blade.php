@@ -30,7 +30,6 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{asset('css/responsive/responsive.css')}}" rel="stylesheet">
-
 </head>
 
 <body>
