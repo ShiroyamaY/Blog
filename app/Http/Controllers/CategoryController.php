@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category): View
     {
-        $posts = $category->posts()->paginate(6);
+        $posts = $category->posts()->with('comments')->paginate(6);
         return view('categories.show',compact('category','posts'));
     }
 }

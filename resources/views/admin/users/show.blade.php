@@ -27,7 +27,7 @@
                             {{$user->email}}
                         </td>
                         <td>
-                            {{$roles[$user->role]}}
+                            {{$roles[$user->role ?? 1]}}
                         </td>
                     </tr>
                 </table>

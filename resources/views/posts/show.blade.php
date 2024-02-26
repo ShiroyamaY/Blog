@@ -4,7 +4,7 @@
         <div class="d-flex justify-content-center">
             <h1 class="pt-5 pb-5">{{$post->title}}</h1>
         </div>
-        <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200"> {{$date->format("F j")}}, {{$date->year}} • {{$date->format("H:i")}} • Featured • {{$post->comments->count()}} Comments</p>
+        <p class="edica-blog-post-meta" data-aos="fade-up" data-aos-delay="200"> {{$date->format("F j")}}, {{$date->year}} • {{$date->format("H:i")}} • Featured • {{ $commentCount = $post->comments->count()}} Comments</p>
         <section class="single-post  d-flex justify-content-center" data-aos="fade-up" data-aos-delay="300">
             <div class="row  d-flex justify-content-center">
                 <div class="col-md-4 post-thumb" data-aos="fade-right">
@@ -59,7 +59,7 @@
                     </section>
                 @endif
                 <section class="comment-section">
-                    <h3 class="mb-3">Comments({{$post->comments->count()}})</h3>
+                    <h3 class="mb-3">Comments({{$commentCount}})</h3>
                     @foreach($comments as $comment)
                         <div class="d-flex justify-content-between align-items-end">
                             <div class="comment">

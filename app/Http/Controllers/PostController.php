@@ -12,9 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(6);
-        $mostLikedPosts = Post::withCount('likedUsers')
-            ->orderBy('liked_users_count','DESC')
+        $posts = Post::withCount('comments')->paginate(6);
+        $mostLikedPosts = Post::withCount('likedUsers')->orderBy('liked_users_count','DESC')
             ->take(3)
             ->get();
 
@@ -27,8 +26,9 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $date = Carbon::parse($post->created_at);
-        $comments = $post->comments()->paginate(6);
-        $relatedPosts = Post::where('category_id',$post->category_id)
+        $comments = $post->comments()->with('user')->paginate(6);
+        $relatedPosts = Post::with('category')
+            ->where('category_id',$post->category_id)
             ->where('id','!=',$post->id)
             ->paginate(3);
 

@@ -58,7 +58,7 @@
 
                                     </form>
                                     <div class="w-25">
-                                        {{$post->likedUsers->count()}}
+                                        {{$post->liked_users_count}}
                                     </div>
                                 </div>
                                 <!-- Post Comments -->

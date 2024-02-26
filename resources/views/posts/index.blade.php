@@ -73,13 +73,13 @@
 
                                             </form>
                                             <div class="w-25">
-                                                {{$post->likedUsers->count()}}
+                                                {{$post->liked_users_count}}
                                             </div>
                                         </div>
                                         <!-- Post Comments -->
                                         <div class="post-comments ml-3">
                                             <i class="fa fa-comment-o" aria-hidden="true"></i>
-                                            {{$post->comments->count()}}
+                                            {{$post->comments_count}}
                                         </div>
                                     </div>
                                 </div>
