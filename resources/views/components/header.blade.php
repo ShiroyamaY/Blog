@@ -14,6 +14,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('categories.index')}}">Categories</a>
                         </li>
+                        @can('view', auth()->user())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('admin.main.index')}}">Admin</a>
+                            </li>
+                        @endcan
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
