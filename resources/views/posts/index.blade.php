@@ -30,10 +30,11 @@
         </div>
     </div>
     <!-- ****** Breadcumb Area End ****** -->
+
     <!-- ****** Archive Area Start ****** -->
     <section class="archive-area mt-3">
         <div class="container">
-            <div class="row d-grid w-100" style="grid-template-columns: repeat(3, 1fr);gap: 16px;display: grid">
+            <div class="posts__grid row w-100">
 
                 @foreach($posts as $post)
                     <!-- Single Post -->
@@ -128,7 +129,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="footer-social-area d-flex">
+                    <div class="footer-social-area d-flex flex-wrap">
                         <div class="single-icon">
                             <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i><span>facebook</span></a>
                         </div>

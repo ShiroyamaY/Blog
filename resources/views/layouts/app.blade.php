@@ -28,8 +28,6 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('css/bootstrap/bootstrap.min.css')}}">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
-    <!-- Responsive CSS -->
-    <link href="{{asset('css/responsive/responsive.css')}}" rel="stylesheet">
 </head>
 
 <body>

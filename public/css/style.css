@@ -73,6 +73,8 @@ p {
     font-size: 16px;
 }
 .top_header_area {
+    position: relative;
+    z-index: 3;
     background-color: #E7E8E3;
 }
 .section_padding_100 {
@@ -1466,4 +1468,23 @@ li {
 .post-show-favourite{
     max-width: 920px;
     margin-bottom: 15px;
+}
+.posts__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    margin-inline: auto;
+}
+
+
+@media screen and (min-width: 500px) {
+    .posts__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .posts__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
